@@ -1,0 +1,81 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+h2,p{
+    margin:10px 0;
+}
+header{
+    margin-bottom:40px; 
+}
+</style>	
+</head>
+<body class="indigo">
+
+    <header class="indigo darken-1 section">
+        <h2 class="center white-text">Donut Maddy</h2>
+        <p class="flow-text grey-text center text-lighten-2">Monthly money tracker</p>
+    </header>
+
+    <div class="container section">
+        <div class="row">
+            <div class="col s12 m6">
+                <form class="card z-depth-0">
+                    <div class="card-content">
+                        <span class="card-title indigo-text">Add item
+                        </span>
+                    <div class="input-field">
+                        <input type="text" id="name">
+                        <label for="name">Item name</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="cost">
+                        <label for="cost">Item Cost</label>
+                    </div>
+                    <div class="input-field center">
+                        <button class="btn-large pink white-text">Add item</button>
+                    </div>
+                    <div class="input-field center">
+                        <p class="red-text" id="error"></p>
+                    </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col s12 m5 push-m1">
+                <div class="canvas"></div>
+                </div>
+        </div>
+    </div>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-firestore.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyATEzuWvTn3V9D1mtOk3dd4HFZyjRumEyw",
+    authDomain: "donut-3df22.firebaseapp.com",
+    databaseURL: "https://donut-3df22.firebaseio.com",
+    projectId: "donut-3df22",
+    storageBucket: "donut-3df22.appspot.com",
+    messagingSenderId: "94252509061"
+  };
+  firebase.initializeApp(config);
+  const db = firebase.firestore();
+  const settings = { timestampsInSnapshots : true };
+  db.settings(settings)
+
+</script>
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<script src = "https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src = "index.js"></script>
+    <script src = "graph.js"></script>
+</body>
+</html>
